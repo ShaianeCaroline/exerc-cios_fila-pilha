@@ -1,0 +1,83 @@
+package  com.company ;
+
+import  java.util. * ;
+
+public  class  Helper {
+
+    public  static  void  exibe ( String  prTexto ) {
+
+        Sistema . para fora . println (prTexto);
+
+    }
+
+    public  static  String  capturaString () {
+
+        Scanner scanner =  novo  Scanner ( Sistema . In);
+
+        scanner de retorno . nextLine ();
+
+    }
+
+    public  static  int  capturaInteiro () {
+
+        Scanner scanner =  novo  Scanner ( Sistema . In);
+
+        scanner de retorno . nextInt ();
+
+    }
+
+    public  static  float  capturaFloat () {
+
+        Scanner scanner =  novo  Scanner ( Sistema . In);
+
+        scanner de retorno . nextFloat ();
+
+    }
+
+    public  static  String  ordinal ( int  prInteiro ) {
+
+         interruptor de retorno (prInteiro) {
+
+            caso  1  - >  " primeiro " ;
+
+            caso  2  - >  " segundo " ;
+
+            caso  3  - >  " terceiro " ;
+
+            caso  4  - >  " quarto " ;
+
+            caso  5  - >  " quinto " ;
+
+            caso  6  - >  " sexto " ;
+
+            caso  7  - >  " sétimo " ;
+
+            caso  8  - >  " oitavo " ;
+
+            caso  9  - >  " não " ;
+
+            caso  10  - >  " décimo " ;
+
+            padrão  - >  " não definido " ;
+
+        };
+
+    }
+
+    public  static  List <?>  converteObjetoParaLista ( Object  prObjeto ) {
+
+        List <?> ALista =  new  ArrayList <> ();
+
+        if (prObjeto . getClass () . isArray ())
+
+            aLista =  Arrays . asList (( Object []) prObjeto);
+
+        else  if (prObjeto instanceof  Collection )
+
+            aLista =  novo  ArrayList <> (( Coleção <?> ) prObjeto);
+
+        return aLista;
+
+    }
+
+}
