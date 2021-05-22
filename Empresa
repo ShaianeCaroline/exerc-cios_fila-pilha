@@ -1,0 +1,144 @@
+package  com.company ;
+
+import  java.util.ArrayList ;
+
+public  class  Fila {
+
+     final  privado ArrayList < Object > aFilaPaciente =  new  ArrayList <> ();
+
+    public  static  void  main ( String [] args ) {
+
+        Fila fila =  novo  Fila ();
+
+        boolean sair =  false ;
+
+        faça {
+
+            Helper . exibe ( menu fila . ());
+
+            switch ( Helper . capturaInteiro ()) {
+
+                caso  1 : {
+
+                    if (fila . getaFilaPaciente () . size () ! =  20 )
+                        fila . addPacienteFila (fila . adicionarPaciente ());
+                    senão
+                        Helper . exibição ( " Não podem ser considerados mais pacientes à fila " );
+
+                    pausa ;
+
+                }
+
+                caso  2 : {
+
+                    fila . atenderPaciente (fila . getaFilaPaciente ());
+
+                    if (fila . getaFilaPaciente () . size () >  0 )
+                        fila . removePacienteFila ( 0 );
+
+                    pausa ;
+
+                }
+
+                caso  3 : {
+
+                    sair =  verdadeiro ;
+
+                }
+
+                padrão : {
+
+                    Helper . exibição ( " Opção não reconhecida " );
+
+                }
+
+                int dado =  ajudante . capturaInteiro ();
+
+            }
+
+        } while ( ! sair);
+
+    }
+
+    / **
+     * Monta o menu principal
+     * @return String
+     * /
+    public  String  menu () {
+
+        retornar  " " "
+                Menu Principal
+                1. Incluir paciente
+                2. Atender paciente
+                3. Sair
+                " " " ;
+
+    }
+
+    / **
+     * Captura os dados para inserir um paciente na fila de espera
+     * @return Retorna um array com os dados do usuário
+     * /
+    public  ArrayList < Object >  adicionarPaciente () {
+
+        ArrayList < Object > aDadoPaciente =  new  ArrayList <> ();
+
+        Helper . exibições ( " Informe o nome do paciente: " );
+        aDadoPaciente . add ( Helper . capturaString ());
+
+        Helper . exibe ( " Informe a idade do paciente: " );
+        aDadoPaciente . adicionar ( Helper . capturaInteiro ());
+
+        Helper . exibições ( " Informe uma breve descrição do atendimento: " );
+        aDadoPaciente . add ( Helper . capturaString ());
+
+        return aDadoPaciente;
+
+    }
+
+    / **
+     * Atende o próximo paciente da fila
+     * @param prAFilaPaciente Array que contem os dados da fila e dos pacientes
+     * /
+    public  void  atenderPaciente ( ArrayList < Object >  prAFilaPaciente ) {
+
+        if (prAFilaPaciente . size () >  0 ) {
+
+            ArrayList <?> ADadoPaciente = ( ArrayList <?> ) PrAFilaPaciente . get ( 0 );
+
+            String textoPaciente;
+
+            textoPaciente =  " Próximo paciente \ r \ n " ;
+            textoPaciente + =  " Nome: " + aDadoPaciente . get ( 0 ) + "  \ r \ n " ;
+            textoPaciente + =  " Idade: " + aDadoPaciente . get ( 1 ) + "  \ r \ n " ;
+            textoPaciente + =  " Descrição: " + aDadoPaciente . get ( 2 ) + "  \ r \ n " ;
+
+            Helper . exibe (textoPaciente);
+
+        } else {
+
+            Helper . exibição ( " Não há pacientes na fila " );
+
+        }
+
+    }
+
+    public  void  addPacienteFila ( ArrayList < Object >  prDadoPaciente ) {
+
+        isso . aFilaPaciente . adicionar (prDadoPaciente);
+
+    }
+
+    public  void  removePacienteFila ( int  prIndex ) {
+
+        isso . aFilaPaciente . remover (prIndex);
+
+    }
+
+    public  ArrayList < Object >  getaFilaPaciente () {
+
+        return aFilaPaciente;
+
+    }
+
+}
