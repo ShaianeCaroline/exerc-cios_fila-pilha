@@ -1,0 +1,143 @@
+package  com.company ;
+
+import  java.util.ArrayList ;
+
+public  class  Pilha {
+
+    ArrayList < Object > aPilha =  new  ArrayList <> ();
+
+    public  static  void  main ( String [] args ) {
+
+        Pilha Pilha =  novo  Pilha ();
+
+        boolean sair =  false ;
+
+        faça {
+
+            Helper . exibição (pilha . menu ());
+
+            switch ( Helper . capturaInteiro ()) {
+
+                caso  1 : {
+
+                    se (pilha . getaPilha () . tamanho () ! =  10 )
+                        pilha . addCaixaPilha (pilha . adicionarCaixa ());
+                    senão
+                        sair =  verdadeiro ;
+
+                    pausa ;
+
+                }
+
+                caso  2 : {
+
+                    pilha . removeCaixaPilha (pilha . getaPilha ());
+                    pausa ;
+
+                }
+
+                caso  3 : {
+
+                    sair =  verdadeiro ;
+                    pausa ;
+
+                }
+
+            }
+
+        } while ( ! sair);
+
+    }
+
+    public  ArrayList < Object >  adicionarCaixa () {
+
+        ArrayList < Object > aDadoCaixa =  new  ArrayList <> ();
+
+        int identificadorCaixa = getaPilha () . tamanho () +  1 ;
+
+        aDadoCaixa . adicionar (identificadorCaixa);
+
+        Helper . exibições ( " Informe a altura da caixa: " );
+        aDadoCaixa . add ( Helper . capturaFloat ());
+
+        Helper . exibições ( " Informe a largura da caixa: " );
+        aDadoCaixa . add ( Helper . capturaFloat ());
+
+        Helper . exibições ( " Informe a profundidade da caixa: " );
+        aDadoCaixa . add ( Helper . capturaFloat ());
+
+        Helper . exibições ( " O conteudo é frágil? (Sim / Não): " );
+        aDadoCaixa . add ( Helper . capturaString ());
+
+        aDadoCaixa . add ( " CX "  + identificadorCaixa);
+
+        return aDadoCaixa;
+
+    }
+
+    public  void  removeCaixaPilha ( ArrayList < Object >  prAPilha ) {
+
+        int contador =  1 ;
+
+        Helper . exibições ( " Informe a caixa que deseja remover " );
+
+        para ( Objeto aDadoPilha : prAPilha) {
+
+            ArrayList < Object > aCaixa =  new  ArrayList <> ( Helper . ConverteObjetoParaLista (aDadoPilha));
+            Helper . relógios (contador +  " . "  + aCaixa . get ( 5 ));
+
+            contador ++ ;
+
+        }
+
+        int escolha =  auxiliar . capturaInteiro ();
+
+        ArrayList <?> ACaixa = ( ArrayList <?> ) PrAPilha . obter (escolha -  1 );
+        removeCaixaPilha (escolha -  1 );
+
+        String retorno;
+
+        retorno =  " Dados da caixa "  + aCaixa . get ( 4 ) +  " \ r \ n " ;
+        retorno + =  " Altura: "  + aCaixa . get ( 1 ) +  " \ r \ n " ;
+        retorno + =  " Largura: "  + aCaixa . get ( 2 ) +  " \ r \ n " ;
+        retorno + =  " Profundidade: "  + aCaixa . get ( 3 ) +  " \ r \ n " ;
+        retorno + =  " É frágil: "  + aCaixa . get ( 4 ) +  " \ r \ n " ;
+
+        Helper . exibições (retorno);
+
+    }
+
+    public  void  addCaixaPilha ( ArrayList < Object >  prADadoCaixa ) {
+
+        isso . aPilha . adicionar (prADadoCaixa);
+
+    }
+
+    public  ArrayList < Object >  getaPilha () {
+
+        devolva  isso . aPilha;
+
+    }
+
+    public  void  removeCaixaPilha ( int  prIndex ) {
+
+        isso . aPilha . remover (prIndex);
+
+    }
+
+    / **
+     * Monta para apresentação o menu principal
+     * @return String
+     * /
+    public  String  menu () {
+
+        retornar  " " "
+                Menu Principal \ r
+                1. Adicionar caixa a pilha \ r
+                2. Remover caixa da pilha \ r
+                3. Sair
+                " " " ;
+
+    }
+
+}
